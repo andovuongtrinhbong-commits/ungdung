@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef, useEffect } from 'react';
 
 interface EnhancedSliderProps {
     label: string;
@@ -23,7 +23,9 @@ export const EnhancedSlider: React.FC<EnhancedSliderProps> = ({
     disabled = false,
     className,
 }) => {
-    
+    const intervalRef = useRef<number | null>(null);
+    const timeoutRef = useRef<number | null>(null);
+
     const isFloat = !Number.isInteger(step) || !Number.isInteger(min) || !Number.isInteger(max);
 
     const handleValueChange = useCallback((newValue: number) => {
@@ -62,6 +64,29 @@ export const EnhancedSlider: React.FC<EnhancedSliderProps> = ({
         handleValueChange(value - step);
     };
 
+    const stopCounter = useCallback(() => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+            timeoutRef.current = null;
+        }
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+        }
+    }, []);
+
+    const startCounter = (handler: () => void) => {
+        stopCounter();
+        handler();
+        timeoutRef.current = window.setTimeout(() => {
+            intervalRef.current = window.setInterval(handler, 100);
+        }, 400);
+    };
+
+    useEffect(() => {
+        return stopCounter;
+    }, [stopCounter]);
+
     return (
         <div className={`enhanced-slider ${className || ''}`}>
             <label>{label}</label>
@@ -79,8 +104,20 @@ export const EnhancedSlider: React.FC<EnhancedSliderProps> = ({
                         aria-label={label}
                     />
                     <div className="spinner-controls">
-                        <button onClick={handleIncrement} disabled={disabled || value >= max} aria-label={`Increase ${label}`}>▲</button>
-                        <button onClick={handleDecrement} disabled={disabled || value <= min} aria-label={`Decrease ${label}`}>▼</button>
+                        <button 
+                            onMouseDown={() => startCounter(handleIncrement)}
+                            onMouseUp={stopCounter}
+                            onMouseLeave={stopCounter}
+                            disabled={disabled || value >= max} 
+                            aria-label={`Increase ${label}`}
+                        >▲</button>
+                        <button 
+                            onMouseDown={() => startCounter(handleDecrement)}
+                            onMouseUp={stopCounter}
+                            onMouseLeave={stopCounter}
+                            disabled={disabled || value <= min} 
+                            aria-label={`Decrease ${label}`}
+                        >▼</button>
                     </div>
                 </div>
                 {unit && <span>{unit}</span>}

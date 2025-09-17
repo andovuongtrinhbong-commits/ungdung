@@ -69,3 +69,13 @@ export interface MaskEffects {
     gap: number;
   };
 }
+
+export interface ProjectData {
+  version: string;
+  canvasSize: { width: number; height: number };
+  layers: Layer[];
+  maskDataURL: string;
+  backgroundDataURL: string;
+  brushTopDataURL: string;
+  maskEffects: MaskEffects;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layer, Stamp, Group } from '../types';
-import { ChevronIcon } from './Icons';
+import { ChevronIcon, CreateGroupIcon } from './Icons';
 
 interface LayersPanelProps {
     isRightSidebarOpen: boolean;
@@ -10,6 +10,7 @@ interface LayersPanelProps {
     dropTargetId: string | null;
     
     handleGroup: () => void;
+    handleCreateEmptyGroup: () => void;
     handleDragStart: (e: React.DragEvent, layer: Layer) => void;
     handleDragEnd: () => void;
     handleDragOver: (e: React.DragEvent, targetGroup: Group) => void;
@@ -28,6 +29,7 @@ export const LayersPanel: React.FC<LayersPanelProps> = ({
     draggedItemId,
     dropTargetId,
     handleGroup,
+    handleCreateEmptyGroup,
     handleDragStart,
     handleDragEnd,
     handleDragOver,
@@ -104,9 +106,14 @@ export const LayersPanel: React.FC<LayersPanelProps> = ({
             <div className="sidebar-content">
                 <div className="layers-header">
                     <h2>Layers</h2>
-                    {selectedIds.length > 1 && (
-                        <button onClick={handleGroup}>Group Selection</button>
-                    )}
+                    <div className="layers-header-actions">
+                        <button onClick={handleCreateEmptyGroup} title="Create New Group" className="create-group-btn">
+                            <CreateGroupIcon />
+                        </button>
+                        {selectedIds.length > 1 && (
+                            <button onClick={handleGroup}>Group</button>
+                        )}
+                    </div>
                 </div>
                 <div className="layer-list">
                     {layers.length > 0 ? (

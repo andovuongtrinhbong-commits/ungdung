@@ -48,7 +48,7 @@ export const StampToolPanel: React.FC<StampToolPanelProps> = ({
                                 alt="Stamp Asset"
                                 className={`stamp-thumbnail ${activeStampSrc === texture.src ? 'active' : ''}`}
                                 onClick={() => setActiveStampSrc(texture.src)}
-                                style={{ width: `50px`, height: `50px` }}
+                                style={{ width: `70px`, height: `70px` }}
                             />
                         ))
                     ) : (

@@ -1,4 +1,5 @@
 import React from 'react';
+import './ToolPanel.css';
 
 interface ToolPanelProps {
   title: string;

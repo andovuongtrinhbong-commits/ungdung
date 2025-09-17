@@ -9,6 +9,8 @@ interface SettingsToolPanelProps {
     handleApplySize: () => void;
     viewportDpi: number;
     setViewportDpi: (value: number) => void;
+    handleSaveProject: () => void;
+    handleLoadProject: () => void;
 }
 
 export const SettingsToolPanel: React.FC<SettingsToolPanelProps> = ({
@@ -19,6 +21,8 @@ export const SettingsToolPanel: React.FC<SettingsToolPanelProps> = ({
     handleApplySize,
     viewportDpi,
     setViewportDpi,
+    handleSaveProject,
+    handleLoadProject,
 }) => {
     return (
         <>
@@ -53,6 +57,14 @@ export const SettingsToolPanel: React.FC<SettingsToolPanelProps> = ({
                     unit="DPI"
                 />
                 <p className="help-text">Higher values increase sharpness at the cost of performance. Default is 96.</p>
+            </div>
+            <div className="control-group">
+                <h3>Project</h3>
+                <div className="button-group-vertical">
+                    <button onClick={handleSaveProject}>Save Project</button>
+                    <button onClick={handleLoadProject}>Load Project</button>
+                </div>
+                <p className="help-text">Save your entire project to a JSON file to continue working on it later.</p>
             </div>
         </>
     );

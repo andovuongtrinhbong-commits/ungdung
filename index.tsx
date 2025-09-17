@@ -17,25 +17,28 @@ import { SelectionToolPanel } from './components/panels/SelectionToolPanel';
 const MIN_SCALE = 0.1;
 const MAX_SCALE = 10;
 const BRUSH_TEXTURE_URLS = [
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Nen/samac.png',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Nen/co.png',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Snowy%20Grass%201.jpg',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Snow%20Rocks%202.jpg',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Snow%206.jpg',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Snow%204.jpg',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Grass_02.jpg',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Cracked_Dirt_01.jpg'
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nenda.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nendatbt.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nendatnut.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nendanham.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nendaxam.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nendavang.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nenbang1.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nenbang2.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nenbang3.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nenbang4.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nenbang5.png'
 ];
 const FOLDER_1_ASSETS = [
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%201.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%202.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%203.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%204.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%205.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%206.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%207.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%208.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%209.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2010.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2011.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2012.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2013.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2014.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2015.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2016.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2017.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2018.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2019.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2020.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2021.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2022.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2023.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2024.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2025.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2026.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2027.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2028.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2029.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2030.png', 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Moutains%2031.png'
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%201.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%202.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%203.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%204.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%205.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%206.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%207.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%208.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%209.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2010.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2011.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2012.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2013.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2014.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2015.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2016.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2017.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2018.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2019.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2020.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2021.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2022.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2023.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2024.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2025.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2026.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2027.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2028.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2029.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2030.png','https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap1/Moutains%2031.png'
 ].map(src => ({ src, category: '1' }));
 
 const FOLDER_2_ASSETS = [
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/cayda.png',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/caydua.png',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/caysen.png',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/caytre.png',
-    'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/chuoi.png'
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap2/cayda.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap2/caytre.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap2/caydua.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap2/caysen.png',
+    'https://raw.githubusercontent.com/tttkvn/Upanh/main/stamptoolmap2/chuoi.png'
 ].map(src => ({ src, category: '2' }));
 
 const INITIAL_STAMP_ASSETS = [...FOLDER_1_ASSETS, ...FOLDER_2_ASSETS];
@@ -143,8 +146,8 @@ const App = () => {
   const [exportDpi, setExportDpi] = useState(96);
 
   // Texture State
-  const [landTexture, setLandTexture] = useState<Texture>({src: 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Nen/co.png', img: null});
-  const [seaTexture, setSeaTexture] = useState<Texture>({src: 'https://raw.githubusercontent.com/tttkvn/upanh/main/image/Khac/Frozen%20Lake%204.jpg', img: null});
+  const [landTexture, setLandTexture] = useState<Texture>({src: 'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nendatbt.png', img: null});
+  const [seaTexture, setSeaTexture] = useState<Texture>({src: 'https://raw.githubusercontent.com/tttkvn/Upanh/main/brushtexturemap2d/nenbien.jpg', img: null});
 
   // Stamp Tool State
   const [stampAssets, setStampAssets] = useState<StampAsset[]>([]);

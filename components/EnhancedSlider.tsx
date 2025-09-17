@@ -9,6 +9,7 @@ interface EnhancedSliderProps {
     step?: number;
     unit?: string;
     disabled?: boolean;
+    className?: string;
 }
 
 export const EnhancedSlider: React.FC<EnhancedSliderProps> = ({
@@ -20,6 +21,7 @@ export const EnhancedSlider: React.FC<EnhancedSliderProps> = ({
     step = 1,
     unit = '',
     disabled = false,
+    className,
 }) => {
     
     const isFloat = !Number.isInteger(step) || !Number.isInteger(min) || !Number.isInteger(max);
@@ -61,7 +63,7 @@ export const EnhancedSlider: React.FC<EnhancedSliderProps> = ({
     };
 
     return (
-        <div className="enhanced-slider">
+        <div className={`enhanced-slider ${className || ''}`}>
             <label>{label}</label>
             <div className="slider-input-group">
                  <div className="number-input-wrapper">

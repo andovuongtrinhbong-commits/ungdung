@@ -582,7 +582,7 @@ const App = () => {
     } else if (currentTool === 'brush') {
       isDrawing.current = true;
       drawWithBrush(point);
-    } else if (currentTool === 'stamp') {
+    } else if (currentTool === 'stamp' || currentTool === 'selection') {
       const allStamps = flattenLayers(layers);
       let hitStampId: string | null = null;
       for (let i = allStamps.length - 1; i >= 0; i--) {
@@ -613,7 +613,7 @@ const App = () => {
         setActiveToolPanel('selection');
         isDraggingStamp.current = true;
       } else {
-        if (activeStampSrc) {
+        if (currentTool === 'stamp' && activeStampSrc) {
           const img = stampAssets.find(t => t.src === activeStampSrc)?.img;
           if (img) {
             const newStamp: Stamp = {
@@ -638,9 +638,8 @@ const App = () => {
         } else {
           const hadSelection = selectedIds.length > 0;
           setSelectedIds([]);
-          if (hadSelection && activeToolPanel === 'selection') {
+          if (hadSelection && activeToolPanel === 'selection' && currentTool === 'stamp') {
               setActiveToolPanel('stamp');
-              setCurrentTool('stamp');
           }
         }
       }

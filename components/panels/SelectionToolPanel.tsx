@@ -65,7 +65,7 @@ export const SelectionToolPanel: React.FC<SelectionToolPanelProps> = ({
                         unit="°"
                     />
                     <EnhancedSlider
-                        label="Opacity"
+                        label="Trong suốt"
                         value={selectedStamp.opacity}
                         onChange={v => updateSelectedStamp(s => ({ ...s, opacity: v }))}
                         min={0}
@@ -73,15 +73,16 @@ export const SelectionToolPanel: React.FC<SelectionToolPanelProps> = ({
                         step={0.01}
                     />
                     <EnhancedSlider
-                        label="Hue"
+                        label="Sắc độ"
                         value={selectedStamp.hue || 0}
                         onChange={v => updateSelectedStamp(s => ({ ...s, hue: v }))}
                         min={0}
                         max={360}
                         unit="°"
+                        className="hue-slider"
                     />
                     <EnhancedSlider
-                        label="Saturation"
+                        label="Độ rực màu"
                         value={selectedStamp.saturation === undefined ? 100 : selectedStamp.saturation}
                         onChange={v => updateSelectedStamp(s => ({ ...s, saturation: v }))}
                         min={0}

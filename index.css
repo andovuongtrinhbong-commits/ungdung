@@ -46,6 +46,9 @@ body {
 .map-container.tool-stamp {
   cursor: crosshair;
 }
+.map-container.tool-selection {
+  cursor: default;
+}
 
 .map-container.panning {
   cursor: grabbing;
@@ -877,4 +880,8 @@ input[type="range"]::-moz-range-thumb {
 .delete-button svg {
     width: 18px;
     height: 18px;
+}
+
+.hue-slider input[type="range"] {
+  background: linear-gradient(to right, hsl(0, 100%, 50%), hsl(60, 100%, 50%), hsl(120, 100%, 50%), hsl(180, 100%, 50%), hsl(240, 100%, 50%), hsl(300, 100%, 50%), hsl(360, 100%, 50%));
 }

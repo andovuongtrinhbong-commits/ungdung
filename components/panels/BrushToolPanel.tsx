@@ -72,8 +72,8 @@ export const BrushToolPanel: React.FC<BrushToolPanelProps> = ({
                 </div>
             </div>
             <EnhancedSlider label="Size" value={brushSize} onChange={setBrushSize} min={1} max={200} unit="px" />
-            <EnhancedSlider label="Hardness" value={brushHardness} onChange={setBrushHardness} min={0} max={1} step={0.01} disabled={brushShape !== 'circle'} />
-            <EnhancedSlider label="Opacity" value={brushOpacity} onChange={setBrushOpacity} min={0} max={1} step={0.01} />
+            <EnhancedSlider label="Độ mờ" value={brushHardness} onChange={setBrushHardness} min={0} max={1} step={0.01} disabled={brushShape !== 'circle'} />
+            <EnhancedSlider label="Trong suốt" value={brushOpacity} onChange={setBrushOpacity} min={0} max={1} step={0.01} />
             
             <div className="control-group">
                 <h4>Texture</h4>
@@ -92,10 +92,10 @@ export const BrushToolPanel: React.FC<BrushToolPanelProps> = ({
             <div className="control-group">
                 <h4>Texture Adjustments</h4>
                 <EnhancedSlider label="Texture Scale" value={brushTextureScale} onChange={setBrushTextureScale} min={20} max={300} unit="px" />
-                <EnhancedSlider label="Hue" value={brushHue} onChange={setBrushHue} min={0} max={360} unit="°" />
-                <EnhancedSlider label="Saturation" value={brushSaturation} onChange={setBrushSaturation} min={0} max={200} unit="%" />
-                <EnhancedSlider label="Brightness" value={brushBrightness} onChange={setBrushBrightness} min={0} max={200} unit="%" />
-                <EnhancedSlider label="Contrast" value={brushContrast} onChange={setBrushContrast} min={0} max={200} unit="%" />
+                <EnhancedSlider label="Sắc độ" value={brushHue} onChange={setBrushHue} min={0} max={360} unit="°" className="hue-slider" />
+                <EnhancedSlider label="Độ rực màu" value={brushSaturation} onChange={setBrushSaturation} min={0} max={200} unit="%" />
+                <EnhancedSlider label="Độ sáng tối" value={brushBrightness} onChange={setBrushBrightness} min={0} max={200} unit="%" />
+                <EnhancedSlider label="Tương phản" value={brushContrast} onChange={setBrushContrast} min={0} max={200} unit="%" />
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tool } from '../types';
-import { SettingsIcon, ShovelIcon, PaintBrushIcon, StampIcon, GridIcon, AssetsIcon, ExportIcon } from './Icons';
+import { SettingsIcon, ShovelIcon, PaintBrushIcon, StampIcon, GridIcon, AssetsIcon, ExportIcon, SelectionIcon } from './Icons';
 
 interface ToolbarProps {
   activeToolPanel: Tool | null;
@@ -22,6 +22,9 @@ export const Toolbar: React.FC<ToolbarProps> = ({ activeToolPanel, onToolSelect 
       </button>
       <button title="Stamp Tool" className={activeToolPanel === 'stamp' ? 'active' : ''} onClick={() => onToolSelect('stamp')} aria-label="Stamp Tool">
           <StampIcon />
+      </button>
+      <button title="Selection Tool" className={activeToolPanel === 'selection' ? 'active' : ''} onClick={() => onToolSelect('selection')} aria-label="Selection Tool">
+          <SelectionIcon />
       </button>
       <div className="separator"></div>
       <button title="Grid Options" className={activeToolPanel === 'grid' ? 'active' : ''} onClick={() => onToolSelect('grid')} aria-label="Grid Options">
